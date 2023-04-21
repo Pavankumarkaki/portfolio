@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="img/logo2.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-text">
+            <h1>HI , I AM <br> <span> PAVAN </span> KUMAR</h1>
+            <p>WEB DEVELOVER AND ML ENGINEER</p>
+        </div>
+    </div>
+    <!-- ----------about----------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I am a web developer and a machine learning engineer with a passion for creating innovative and user-friendly solutions. I have experience in developing web applications using HTML, CSS, JavaScript, React, Node.js, and MongoDB. I also have skills in applying machine learning techniques such as natural language processing, computer vision, and deep learning to solve real-world problems.
+                    <br>
+                    I am an enthusiastic, self-motivated, reliable, responsible and hard working person.
+                    I am a mature team worker and adaptable to all challenging situations.
+                     I am able to work well both in a team environment as well as using own initiative.
+                      I am able to work well under pressure and adhere to strict deadlines.
+                      <br>
+                      I love to learn new things and Technologies. I never fails ,either I win or I learn.
+                      I am always eager to learn new technologies and tools to enhance my web development and machine learning capabilities. I enjoy collaborating with other developers and engineers to share ideas and best practices. I am also interested in contributing to open source projects and communities that aim to make the web and the world a better place.
+                    </p>
+                    <hr>
+                </div>
+                <div class="col-2">
+                    <img src="img/photo.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- -------contact--------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>pk325530@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+91 7981705526</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100009360085182" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://twitter.com/KakiPavankumar"target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/__pavan__.kumar__/"target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/pavankumarkaki/"target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Message"></textarea>
+                        <button type="submit" class="btn btn2"> Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright ©️ Pavan. Made with <i class="fa-sharp fa-solid fa-heart"></i></p>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/05fa80127d.js" crossorigin="anonymous"></script>
+    <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwHZMPQXoWDJefW5LW7hX-xNA4nejhhkXV00-MYJgp4cuLG3AjGrsOvNW5yS1R0bHzZWA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg= document.getElementById("msg")
+    
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {msg.innerHTML="Message sent successfully"
+        setTimeout(function(){
+            msg.innerHTML=""
+        },5000)
+        form.reset()
+    })
+        .catch(error => console.error('Error!', error.message))
+    })
+    </script>
+</body>
+</html>
