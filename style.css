@@ -12,13 +12,21 @@ body{
     color: white;
 }
 #header{
-    background: url(img/back2.jpg);
+    /* background: url(img/back2.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center; */
     width: 100%;
     height: 100vh;
 
 }
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 .container{
     padding: 10px 10px;
 }
@@ -30,6 +38,7 @@ nav{
 }
 .logo{
     width: 200px;
+    z-index: 1;
 
 }
 nav ul li{
@@ -49,8 +58,9 @@ nav ul li a:hover{
     border-radius: 10px;
 }
 .header-text{
-    margin-top: 10%;
-    margin-left: 100px;
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 60px;
     font-size: 30px;
 }
 .header-text h1{
@@ -60,9 +70,6 @@ nav ul li a:hover{
 .header-text p{
     font-size: 20px;
 }
-/* .header-text span{
-    color:red;
-} */
 
 /* ---------------about------------ */
 #about{
@@ -98,6 +105,7 @@ nav ul li a:hover{
     width: 90%;
     height: 95%;
     border-radius: 15px;
+    /* box-shadow: 15px 15px 20px white; */
 }
 .details{
     display: flex;
@@ -110,6 +118,29 @@ nav ul li a:hover{
 .co1,.co2,.co3{
     flex-basis: 30%;
     line-height: 50px;
+}
+/* ------------------------------top button------------------- */
+#top{
+    height: 50px;
+    width: 50px;
+    background-color: #343131;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1;
+    border-radius: 30%;
+    display: flex;
+    cursor: pointer;
+}
+#top a{
+    text-decoration: none;
+    font-style: none;
+    color: #fff;
+    font-size: 30px;
+    padding: 25%;
+}
+#top:hover{
+    background-color: #808080;
 }
 /* ------------------------education------------------ */
 #education{
@@ -156,6 +187,24 @@ border-radius: 5px;
     border-radius: 10px;
     position: absolute;
     bottom: 100%;
+}
+.line-top::after{
+    content: '';
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 30px solid #343131;
+    position: absolute;
+    top: 95%;
+    left: 7%;
+}
+.line-buttom::after{
+    content: '';
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 30px solid #343131;
+    position: absolute;
+    bottom: 95%;
+    left: 7%;
 }
 .line-buttom{
     padding: 15px 30px;
@@ -222,6 +271,93 @@ border-radius: 5px;
     left: 98%;
     top: -50%;
 }
+/* -----------------profiles------------------ */
+#profiles{
+    padding: 30px 50px;
+}
+#profiles .row{
+    padding: 30px;
+    margin: 20px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 400px 400px 400px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#profiles .row a{
+    color: #fff;
+    border: 1px solid white ;
+    text-align: center;
+    /* flex-basis: 30%; */
+    font-size: 50px;
+    padding: 50px 0;
+    /* flex-wrap: wrap; */
+    cursor: pointer;
+}
+#profiles .row i {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+#profiles .row a i.background-icon-1 {
+/* Styles for the first icon with a background image */
+background: url(img/leetcode-white.svg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain;
+height: 100%;
+width: 100%;
+}
+#profiles .row a i.background-icon-2 {
+    /* Styles for the first icon with a background image */
+    background: url(img/codechef-white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+#profiles .row a i.background-icon-3 {
+    /* Styles for the first icon with a background image */
+    background: url(img/iron-man-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    filter: invert();
+}
+#profiles .row a i.background-icon-4 {
+    /* Styles for the first icon with a background image */
+    background: url(img/cib-hackerrank-white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+#profiles .row a i.background-icon-5 {
+    /* Styles for the first icon with a background image */
+    background: url(img/credly-white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    height: 100%;
+    width: 100%;
+}
+#profiles .row a i.background-icon-6 {
+    /* Styles for the first icon with a background image */
+    background: url(img/geeksforgeeks-white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    height: 100%;
+    width: 100%;
+}
+
+
 /* ------------------contact--------------- */
 #contact{
     padding-top: 30px;
